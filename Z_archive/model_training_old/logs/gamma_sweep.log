@@ -1,0 +1,34 @@
+/home/fleet75/diss_bess/6_models/dispatch_layer.py:432: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Disciplined Parametrized Programming, at https://www.cvxpy.org/tutorial/dpp/index.html
+  bundle.problem.solve(solver=solver, **solver_kwargs)
+device=cpu  batch_size=16  gammas=[0.0001, 0.0005, 0.001, 0.005, 0.01]  baseline=1e-04
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+sampled 16 days (seeded=20240801, reproducible): [184, 41, 274, 134, 229, 262, 144, 31, 2, 297, 102, 178, 156, 199, 194, 259]
+precomputing oracle costs + boxes for the 16 sampled days...
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2828580
+Academic license 2828580 - for non-commercial use only - registered to al___@ucl.ac.uk
+building shared forecast/scenario/price pipeline (once, reused across all gammas)...
+running gamma=1e-04 ...
+  t_fwd=17.171s  t_bwd=133.884s  inaccurate=True  grad_norm=7228.65  mean_raw_cost=3705.616  mean_f_dfl=1184.070
+running gamma=5e-04 ...
+  t_fwd=13.559s  t_bwd=77.955s  inaccurate=True  grad_norm=5858.11  mean_raw_cost=3692.135  mean_f_dfl=1170.590
+running gamma=1e-03 ...
+  t_fwd=201.823s  t_bwd=71.702s  inaccurate=True  grad_norm=6054.76  mean_raw_cost=3667.281  mean_f_dfl=1145.735
+running gamma=5e-03 ...
+  t_fwd=14.620s  t_bwd=40.058s  inaccurate=True  grad_norm=9578.36  mean_raw_cost=3624.309  mean_f_dfl=1102.763
+running gamma=1e-02 ...
+  t_fwd=15.551s  t_bwd=42.662s  inaccurate=True  grad_norm=5795.59  mean_raw_cost=3575.806  mean_f_dfl=1054.260
+
+saved full per-day results -> /home/fleet75/diss_bess/7_model_training/gamma_sweep_results.pkl
+
+   gamma   t_fwd(s)   t_bwd(s)   inaccur   grad_norm    |dp_ch|   |dp_dis|   |dD_ch|_F   |dD_dis|_F   raw_cost     f_dfl   |df_dfl|
+   1e-04     17.171    133.884      True     7228.65     0.0000     0.0000      0.0000       0.0000   3705.616  1184.070     0.0000
+   5e-04     13.559     77.955      True     5858.11     0.2022     0.1400     36.8973      34.5925   3692.135  1170.590    56.7154
+   1e-03    201.823     71.702      True     6054.76     0.4168     0.2104     50.9351      47.4027   3667.281  1145.735    74.2330
+   5e-03     14.620     40.058      True     9578.36     0.7666     0.4507     75.1510      69.3477   3624.309  1102.763   145.1585
+   1e-02     15.551     42.662      True     5795.59     0.9127     0.5399     82.4824      76.0255   3575.806  1054.260   160.8437
+
+deviation columns (|dX|) are mean-over-16-days of the PER-DAY norm of (value at gamma) - (value at baseline gamma=1e-04), not a raw mean difference -- avoids cancellation across days.

@@ -1,0 +1,17 @@
+/home/fleet75/diss_bess/7_model_training/train_crps_only.py:77: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  total += float(day_loss)
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+epoch  0  train_pinball=39.2322  val_pinball=46.4896  (38.4s)  *best
+epoch  1  train_pinball=38.9083  val_pinball=43.9318  (28.1s)  *best
+epoch  2  train_pinball=38.1065  val_pinball=43.3442  (30.9s)  *best
+epoch  3  train_pinball=38.2764  val_pinball=44.9498  (35.5s)  (patience 1/5)
+epoch  4  train_pinball=38.4562  val_pinball=44.2060  (30.1s)  (patience 2/5)
+epoch  5  train_pinball=38.9203  val_pinball=44.6789  (34.1s)  (patience 3/5)
+epoch  6  train_pinball=38.2476  val_pinball=44.2014  (28.5s)  (patience 4/5)
+epoch  7  train_pinball=37.8192  val_pinball=45.2552  (28.1s)  (patience 5/5)
+early stop at epoch 7 (best val_pinball=43.3442)
+saved -> /home/fleet75/diss_bess/7_model_training/crps_only_retrained_seed20240802.pt

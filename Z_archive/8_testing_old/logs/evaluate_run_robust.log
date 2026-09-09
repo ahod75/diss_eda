@@ -1,0 +1,56 @@
+/home/fleet75/diss_bess/6_models/dispatch_layer.py:432: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Disciplined Parametrized Programming, at https://www.cvxpy.org/tutorial/dpp/index.html
+  bundle.problem.solve(solver=solver, **solver_kwargs)
+loading test windows...
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_test=366  (evaluating 366)
+
+=== corner: price_model=single k=0 ===
+  precomputing oracle costs (single)...
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2828580
+Academic license 2828580 - for non-commercial use only - registered to al___@ucl.ac.uk
+/home/fleet75/diss_bess/6_models/dispatch_layer.py:432: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Disciplined Parametrized Programming, at https://www.cvxpy.org/tutorial/dpp/index.html
+  bundle.problem.solve(solver=solver, **solver_kwargs)
+  evaluating baseline...
+  evaluating DFL checkpoint (dfl_point_robust_single_k0.pt)...
+
+=== corner: price_model=single k=1 ===
+  evaluating baseline...
+  evaluating DFL checkpoint (dfl_point_robust_single_k1.pt)...
+
+=== corner: price_model=dual k=0 ===
+  precomputing oracle costs (dual)...
+  evaluating baseline...
+  evaluating DFL checkpoint (dfl_point_robust_dual_k0.pt)...
+
+=== corner: price_model=dual k=1 ===
+  evaluating baseline...
+  evaluating DFL checkpoint (dfl_point_robust_dual_k1.pt)...
+
+=== corner: price_model=single (1-stage) ===
+  evaluating baseline...
+  evaluating DFL checkpoint (dfl_1stage_single.pt)...
+
+=== corner: price_model=dual (1-stage) ===
+  evaluating baseline...
+  evaluating DFL checkpoint (dfl_1stage_dual.pt)...
+
+======================================================================
+  source   price_model   k  n_days  mean_total_cost  mean_regret  mean_crps  mean_abs_dev_MWh   mean_C_da  mean_C_imb  total_sat_hours  total_sat_MWh  mean_throughput_MWh
+baseline        single 0.0     366      1745.316802    14.820363   6.424656          8.826185 1830.881644  -85.564842               55      72.495278            18.670280
+     dfl        single 0.0     366      1737.009905     6.513466   6.898368          9.292067 1800.966171  -63.956266               55      72.495475            18.670280
+baseline        single 1.0     366      1932.380152   201.883713   6.424656          7.155599 2020.029034  -87.648882             3588    2699.287964            43.868868
+     dfl        single 1.0     366      1873.954680   143.458241   9.149936          8.582069 1754.628178  119.326502             4661    4340.639822            19.088029
+baseline          dual 0.0     366      2073.864138   343.367700   6.424656          7.990495 1865.953253  207.910886             2406     834.213187            20.197138
+     dfl          dual 0.0     366      1953.699806   223.203367   6.386834          7.942937 1707.569927  246.129879             2801    1123.086583            20.101643
+baseline          dual 1.0     366      2233.515523   503.019084   6.424656          7.155599 2020.029034  213.486489             3588    2699.287964            43.868868
+     dfl          dual 1.0     366      2024.045039   293.548600   7.376856          7.488617 1739.384191  284.660848             3444    3480.228876            22.796960
+baseline 1stage_single NaN     366      1745.316908    14.820469   6.424656          8.826185 1830.881644  -85.564736               53      72.495266            18.669531
+     dfl 1stage_single NaN     366      1742.160473    11.664034   7.366611         10.030462 1863.639482 -121.479009               53      72.495266            18.669531
+baseline   1stage_dual NaN     366      2096.850527   366.354089   6.424656          8.826185 1830.881644  265.968883               50      72.495253            18.669537
+     dfl   1stage_dual NaN     366      1913.099847   182.603408   6.917252          9.171089 1570.567038  342.532808               50      72.495253            18.669537
+
+Per-day CSVs and summary.csv written to /home/fleet75/diss_bess/8_testing/results

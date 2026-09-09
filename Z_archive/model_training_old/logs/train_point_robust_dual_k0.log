@@ -1,0 +1,29 @@
+CORNER_START price_model=dual k=0.0 (point_robust)
+/home/fleet75/diss_bess/6_models/dispatch_layer.py:432: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Disciplined Parametrized Programming, at https://www.cvxpy.org/tutorial/dpp/index.html
+  bundle.problem.solve(solver=solver, **solver_kwargs)
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+precomputing oracle costs (train)...
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2828580
+Academic license 2828580 - for non-commercial use only - registered to al___@ucl.ac.uk
+/home/fleet75/diss_bess/7_model_training/train_corner_point_robust.py:263: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  float(L_base.sum()), float(f_dfl.sum()), (B if inaccurate else 0))
+precomputing oracle costs (val)...
+precomputing frozen baseline boxes (train)...
+precomputing frozen baseline boxes (val)...
+batch_size=8 (overridden)
+[dual k=0.0 point_robust] epoch  0  val_fsurr=682.2171  val_pinball=47.4980  val_combined=87.4978  skipped=0  grad_norm(mean/max)=1193.476/3426.322  sat_frac(train/val)=0.834/0.827  inaccurate(train/val)=365/84  *best
+  checkpoint saved (epoch 0, val_fsurr=682.2171) -> /home/fleet75/diss_bess/7_model_training/dfl_point_robust_dual_k0.pt
+[dual k=0.0 point_robust] epoch  1  val_fsurr=750.0765  val_pinball=47.2096  val_combined=87.7526  skipped=0  grad_norm(mean/max)=1099.112/3574.041  sat_frac(train/val)=0.801/0.817  inaccurate(train/val)=365/79  (patience 1/5)
+[dual k=0.0 point_robust] epoch  2  val_fsurr=666.8533  val_pinball=48.6741  val_combined=88.9788  skipped=0  grad_norm(mean/max)=947.310/2216.683  sat_frac(train/val)=0.798/0.783  inaccurate(train/val)=365/88  *best
+  checkpoint saved (epoch 2, val_fsurr=666.8533) -> /home/fleet75/diss_bess/7_model_training/dfl_point_robust_dual_k0.pt
+[dual k=0.0 point_robust] epoch  3  val_fsurr=682.1555  val_pinball=45.2553  val_combined=83.7699  skipped=0  grad_norm(mean/max)=979.642/2886.968  sat_frac(train/val)=0.784/0.785  inaccurate(train/val)=365/120  (patience 1/5)
+[dual k=0.0 point_robust] epoch  4  val_fsurr=613.2413  val_pinball=45.7071  val_combined=83.1425  skipped=0  grad_norm(mean/max)=1005.522/2747.268  sat_frac(train/val)=0.801/0.808  inaccurate(train/val)=365/114  *best
+  checkpoint saved (epoch 4, val_fsurr=613.2413) -> /home/fleet75/diss_bess/7_model_training/dfl_point_robust_dual_k0.pt
+[dual k=0.0 point_robust] epoch  5  val_fsurr=592.8853  val_pinball=45.5041  val_combined=82.5510  skipped=0  grad_norm(mean/max)=1083.299/2945.133  sat_frac(train/val)=0.814/0.805  inaccurate(train/val)=365/117  *best
+  checkpoint saved (epoch 5, val_fsurr=592.8853) -> /home/fleet75/diss_bess/7_model_training/dfl_point_robust_dual_k0.pt

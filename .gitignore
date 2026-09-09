@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Ignore everything in the raw data folder
+1_data/raw/*
+# EXCEPT the .gitkeep file
+!1_data/raw/.gitkeep
+
+# Might as well keep the processed data in the repo for now, small file, no legal stuff why not
+#1_data/processed/*
+# EXCEPT the .gitkeep file
+#!1_data/processed/.gitkeep

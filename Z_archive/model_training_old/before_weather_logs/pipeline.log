@@ -1,0 +1,42 @@
+PIPELINE_START 2026-08-08T02:03:29+01:00
+CORNER_START price_model=single k=0.0 2026-08-08T02:03:29+01:00
+[single k=0] epoch  8  val_fsurr=2.3139  val_pinball=2426.4852  val_combined=4.1128  skipped=0  (patience 8/10)
+[single k=0] epoch  9  val_fsurr=2.3140  val_pinball=3651.5629  val_combined=4.1854  skipped=0  (patience 9/10)
+/home/fleet75/diss_bess/.venv/lib/python3.12/site-packages/diffcp/cone_program.py:442: UserWarning: Solved/Inaccurate.
+  warnings.warn("Solved/Inaccurate.")
+[single k=0] epoch 10  val_fsurr=2.3143  val_pinball=5341.7093  val_combined=4.3025  skipped=0  (patience 10/10)
+  early stop at epoch 10 (best val_fsurr=2.3146)
+CORNER_DONE price_model=single k=0.0 best_val_fsurr=2.3146 epochs_run=11 elapsed_s=803
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_single_k0.pt
+CORNER_DONE price_model=single k=0.0 2026-08-08T02:17:10+01:00
+CORNER_START price_model=single k=1.0 2026-08-08T02:17:10+01:00
+[single k=1] epoch  7  val_fsurr=13.1853  val_pinball=54.6990  val_combined=20.5064  skipped=0  (patience 6/10)
+[single k=1] epoch  8  val_fsurr=17.5501  val_pinball=60.9237  val_combined=26.2133  skipped=0  (patience 7/10)
+[single k=1] epoch  9  val_fsurr=13.8144  val_pinball=54.7157  val_combined=21.2914  skipped=0  (patience 8/10)
+[single k=1] epoch 10  val_fsurr=12.9791  val_pinball=54.9751  val_combined=20.2045  skipped=0  (patience 9/10)
+[single k=1] epoch 11  val_fsurr=14.3829  val_pinball=55.8918  val_combined=22.0855  skipped=0  (patience 10/10)
+  early stop at epoch 11 (best val_fsurr=12.7615)
+CORNER_DONE price_model=single k=1.0 best_val_fsurr=12.7615 epochs_run=12 elapsed_s=8079
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_single_k1.pt
+CORNER_DONE price_model=single k=1.0 2026-08-08T04:32:15+01:00
+CORNER_START price_model=dual k=0.0 2026-08-08T04:32:15+01:00
+[dual k=0] epoch  9  val_fsurr=7.1600  val_pinball=160.6453  val_combined=8.5642  skipped=0  (patience 6/10)
+[dual k=0] epoch 10  val_fsurr=4.1056  val_pinball=137.8008  val_combined=5.4323  skipped=0  (patience 7/10)
+[dual k=0] epoch 11  val_fsurr=5.5399  val_pinball=141.3003  val_combined=6.8184  skipped=0  (patience 8/10)
+[dual k=0] epoch 12  val_fsurr=7.2532  val_pinball=157.6892  val_combined=8.6093  skipped=0  (patience 9/10)
+[dual k=0] epoch 13  val_fsurr=14.7526  val_pinball=230.9565  val_combined=16.6360  skipped=0  (patience 10/10)
+  early stop at epoch 13 (best val_fsurr=3.7732)
+CORNER_DONE price_model=dual k=0.0 best_val_fsurr=3.7732 epochs_run=14 elapsed_s=33145
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_dual_k0.pt
+CORNER_DONE price_model=dual k=0.0 2026-08-08T13:45:12+01:00
+CORNER_START price_model=dual k=1.0 2026-08-08T13:45:12+01:00
+[dual k=1] epoch  8  val_fsurr=13.7587  val_pinball=54.8105  val_combined=21.2386  skipped=0  (patience 6/10)
+[dual k=1] epoch  9  val_fsurr=14.8583  val_pinball=57.7140  val_combined=22.8316  skipped=0  (patience 7/10)
+[dual k=1] epoch 10  val_fsurr=16.7410  val_pinball=62.9177  val_combined=25.5117  skipped=0  (patience 8/10)
+[dual k=1] epoch 11  val_fsurr=14.4120  val_pinball=56.3760  val_combined=22.1217  skipped=0  (patience 9/10)
+[dual k=1] epoch 12  val_fsurr=15.5559  val_pinball=57.7448  val_combined=23.6357  skipped=0  (patience 10/10)
+  early stop at epoch 12 (best val_fsurr=13.0171)
+CORNER_DONE price_model=dual k=1.0 best_val_fsurr=13.0171 epochs_run=13 elapsed_s=8080
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_dual_k1.pt
+CORNER_DONE price_model=dual k=1.0 2026-08-08T16:00:20+01:00
+PIPELINE_COMPLETE 2026-08-08T16:00:20+01:00

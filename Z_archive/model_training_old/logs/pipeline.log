@@ -1,0 +1,21 @@
+PIPELINE_START 2026-08-10T02:38:28+0100
+CORNER_LAUNCH 1stage/single cmd=/home/fleet75/diss_bess/.venv/bin/python3 /home/fleet75/diss_bess/7_model_training/train_corner_1stage.py single log=/home/fleet75/diss_bess/7_model_training/logs/train_1stage_single.log
+CORNER_OK 1stage/single elapsed_s=370
+CORNER_LAUNCH 1stage/dual cmd=/home/fleet75/diss_bess/.venv/bin/python3 /home/fleet75/diss_bess/7_model_training/train_corner_1stage.py dual log=/home/fleet75/diss_bess/7_model_training/logs/train_1stage_dual.log
+CORNER_OK 1stage/dual elapsed_s=258
+CORNER_LAUNCH point_robust/single/k0 cmd=/home/fleet75/diss_bess/.venv/bin/python3 /home/fleet75/diss_bess/7_model_training/train_corner_point_robust.py single 0 log=/home/fleet75/diss_bess/7_model_training/logs/train_point_robust_single_k0.log
+CORNER_OK point_robust/single/k0 elapsed_s=3624
+CORNER_LAUNCH point_robust/single/k1 cmd=/home/fleet75/diss_bess/.venv/bin/python3 /home/fleet75/diss_bess/7_model_training/train_corner_point_robust.py single 1 log=/home/fleet75/diss_bess/7_model_training/logs/train_point_robust_single_k1.log
+CORNER_OK point_robust/single/k1 elapsed_s=13017
+CORNER_LAUNCH point_robust/dual/k1 cmd=/home/fleet75/diss_bess/.venv/bin/python3 /home/fleet75/diss_bess/7_model_training/train_corner_point_robust.py dual 1 log=/home/fleet75/diss_bess/7_model_training/logs/train_point_robust_dual_k1.log
+CORNER_OK point_robust/dual/k1 elapsed_s=3145
+CORNER_LAUNCH point_robust/dual/k0 cmd=/home/fleet75/diss_bess/.venv/bin/python3 /home/fleet75/diss_bess/7_model_training/train_corner_point_robust.py dual 0 log=/home/fleet75/diss_bess/7_model_training/logs/train_point_robust_dual_k0.log
+CORNER_OK point_robust/dual/k0 elapsed_s=4391
+PIPELINE_SUMMARY
+  1stage/single                OK                            370s
+  1stage/dual                  OK                            258s
+  point_robust/single/k0       OK                           3624s
+  point_robust/single/k1       OK                          13017s
+  point_robust/dual/k1         OK                           3145s
+  point_robust/dual/k0         OK                           4391s
+PIPELINE_COMPLETE 2026-08-10T09:31:52+0100

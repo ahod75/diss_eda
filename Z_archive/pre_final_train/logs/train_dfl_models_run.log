@@ -1,0 +1,16 @@
+device=cpu  archetypes=[('short_sharp', 4.0, 4.0, 2.0), ('balanced', 2.0, 2.0, 4.0), ('long_slow', 1.0, 1.0, 8.0)]  modes=['single-price', 'dual-price']
+loading training data (once, shared across every corner)...
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+
+CORNER_START architecture=1stage mode=single-price archetype=short_sharp C_ch=4.0 C_dis=4.0 B_max=2.0
+batch_size=8
+/home/fleet75/diss_bess/7_model_training/dfl_train_utils.py:237: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  float(L_base.sum()), float(f_dfl.sum()), (B if inaccurate else 0), t_forward)
+[1stage single-price] epoch  0  val_fsurr=2621.2331  val_pinball=45.3950  val_combined=88.0185  skipped=0  grad_norm(mean/max)=362.605/907.122  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.88s/0.63s  t_bwd(train)=19.35s  *best
+  checkpoint saved (epoch 0, val_fsurr=2621.2331) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_short_sharp.pt
+[1stage single-price] epoch  1  val_fsurr=2617.9357  val_pinball=43.8549  val_combined=85.1552  skipped=0  grad_norm(mean/max)=316.862/811.664  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=1.07s/0.60s  t_bwd(train)=25.23s  *best
+  checkpoint saved (epoch 1, val_fsurr=2617.9357) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_short_sharp.pt

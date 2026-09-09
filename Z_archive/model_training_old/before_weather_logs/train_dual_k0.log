@@ -1,0 +1,30 @@
+CORNER_START price_model=dual k=0.0
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+precomputing oracle costs (train)...
+/home/fleet75/diss_bess/6_models/dispatch_layer.py:411: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Disciplined Parametrized Programming, at https://www.cvxpy.org/tutorial/dpp/index.html
+  bundle.problem.solve(solver=solver, **solver_kwargs)
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2828580
+Academic license 2828580 - for non-commercial use only - registered to al___@ucl.ac.uk
+precomputing oracle costs (val)...
+[dual k=0] epoch  0  val_fsurr=7.8494  val_pinball=199.1229  val_combined=10.3270  skipped=0  *best
+[dual k=0] epoch  1  val_fsurr=4.5033  val_pinball=98.1683  val_combined=4.4224  skipped=0  *best
+[dual k=0] epoch  2  val_fsurr=7.6598  val_pinball=184.5954  val_combined=10.5357  skipped=0  (patience 1/10)
+[dual k=0] epoch  3  val_fsurr=3.7732  val_pinball=113.3746  val_combined=5.2656  skipped=0  *best
+[dual k=0] epoch  4  val_fsurr=7.9699  val_pinball=153.5631  val_combined=9.7725  skipped=0  (patience 1/10)
+[dual k=0] epoch  5  val_fsurr=4.3407  val_pinball=123.1731  val_combined=5.5091  skipped=0  (patience 2/10)
+[dual k=0] epoch  6  val_fsurr=6.2430  val_pinball=135.1392  val_combined=7.4167  skipped=0  (patience 3/10)
+[dual k=0] epoch  7  val_fsurr=5.9174  val_pinball=138.4593  val_combined=6.9040  skipped=0  (patience 4/10)
+[dual k=0] epoch  8  val_fsurr=4.4600  val_pinball=128.6360  val_combined=4.9523  skipped=0  (patience 5/10)
+[dual k=0] epoch  9  val_fsurr=7.1600  val_pinball=160.6453  val_combined=8.5642  skipped=0  (patience 6/10)
+[dual k=0] epoch 10  val_fsurr=4.1056  val_pinball=137.8008  val_combined=5.4323  skipped=0  (patience 7/10)
+[dual k=0] epoch 11  val_fsurr=5.5399  val_pinball=141.3003  val_combined=6.8184  skipped=0  (patience 8/10)
+[dual k=0] epoch 12  val_fsurr=7.2532  val_pinball=157.6892  val_combined=8.6093  skipped=0  (patience 9/10)
+[dual k=0] epoch 13  val_fsurr=14.7526  val_pinball=230.9565  val_combined=16.6360  skipped=0  (patience 10/10)
+  early stop at epoch 13 (best val_fsurr=3.7732)
+CORNER_DONE price_model=dual k=0.0 best_val_fsurr=3.7732 epochs_run=14 elapsed_s=33145
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_dual_k0.pt

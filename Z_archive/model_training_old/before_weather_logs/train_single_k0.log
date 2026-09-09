@@ -1,0 +1,31 @@
+CORNER_START price_model=single k=0.0
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+precomputing oracle costs (train)...
+/home/fleet75/diss_bess/6_models/dispatch_layer.py:411: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Disciplined Parametrized Programming, at https://www.cvxpy.org/tutorial/dpp/index.html
+  bundle.problem.solve(solver=solver, **solver_kwargs)
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2828580
+Academic license 2828580 - for non-commercial use only - registered to al___@ucl.ac.uk
+precomputing oracle costs (val)...
+/home/fleet75/diss_bess/.venv/lib/python3.12/site-packages/diffcp/cone_program.py:522: UserWarning: Solved/Inaccurate.
+  warnings.warn("Solved/Inaccurate.")
+[single k=0] epoch  0  val_fsurr=2.3146  val_pinball=385.2586  val_combined=2.9768  skipped=0  *best
+[single k=0] epoch  1  val_fsurr=2.3141  val_pinball=629.2907  val_combined=3.4292  skipped=0  (patience 1/10)
+[single k=0] epoch  2  val_fsurr=2.3134  val_pinball=967.9010  val_combined=3.7841  skipped=0  (patience 2/10)
+[single k=0] epoch  3  val_fsurr=2.3139  val_pinball=1058.2662  val_combined=3.8175  skipped=0  (patience 3/10)
+[single k=0] epoch  4  val_fsurr=2.3137  val_pinball=1221.8602  val_combined=3.8680  skipped=0  (patience 4/10)
+[single k=0] epoch  5  val_fsurr=2.3140  val_pinball=1500.2629  val_combined=3.9931  skipped=0  (patience 5/10)
+[single k=0] epoch  6  val_fsurr=2.3147  val_pinball=1382.2164  val_combined=3.8416  skipped=0  (patience 6/10)
+[single k=0] epoch  7  val_fsurr=2.3147  val_pinball=1593.3448  val_combined=3.8881  skipped=0  (patience 7/10)
+[single k=0] epoch  8  val_fsurr=2.3139  val_pinball=2426.4852  val_combined=4.1128  skipped=0  (patience 8/10)
+[single k=0] epoch  9  val_fsurr=2.3140  val_pinball=3651.5629  val_combined=4.1854  skipped=0  (patience 9/10)
+/home/fleet75/diss_bess/.venv/lib/python3.12/site-packages/diffcp/cone_program.py:442: UserWarning: Solved/Inaccurate.
+  warnings.warn("Solved/Inaccurate.")
+[single k=0] epoch 10  val_fsurr=2.3143  val_pinball=5341.7093  val_combined=4.3025  skipped=0  (patience 10/10)
+  early stop at epoch 10 (best val_fsurr=2.3146)
+CORNER_DONE price_model=single k=0.0 best_val_fsurr=2.3146 epochs_run=11 elapsed_s=803
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_single_k0.pt

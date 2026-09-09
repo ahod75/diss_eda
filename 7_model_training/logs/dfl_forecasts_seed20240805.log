@@ -1,0 +1,105 @@
+device=cpu  archetypes=[('balanced', 2.0, 2.0, 4.0)]  modes=['single-price', 'dual-price']  seed=20240805
+loading training data (once, shared across every corner)...
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+
+CORNER_START architecture=1stage mode=single-price archetype=balanced C_ch=2.0 C_dis=2.0 B_max=4.0
+/home/fleet75/diss_bess/7_model_training/dfl_train_utils.py:237: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  float(L_base.sum()), float(f_dfl.sum()), (B if inaccurate else 0), t_forward)
+batch_size=64
+[1stage single-price] epoch  0  val_fsurr=2562.8821  val_pinball=44.5969  val_combined=86.2364  skipped=0  grad_norm(mean/max)=505.576/959.175  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.53s/0.61s  t_bwd(train)=21.69s  *best
+  checkpoint saved (epoch 0, val_fsurr=2562.8821) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch  1  val_fsurr=2562.5776  val_pinball=43.9911  val_combined=85.3180  skipped=0  grad_norm(mean/max)=170.134/313.897  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.67s/0.62s  t_bwd(train)=28.01s  *best
+  checkpoint saved (epoch 1, val_fsurr=2562.5776) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch  2  val_fsurr=2562.3727  val_pinball=44.4140  val_combined=85.9157  skipped=0  grad_norm(mean/max)=181.662/333.115  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.59s/0.62s  t_bwd(train)=26.08s  *best
+  checkpoint saved (epoch 2, val_fsurr=2562.3727) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch  3  val_fsurr=2561.6382  val_pinball=43.3167  val_combined=83.9511  skipped=0  grad_norm(mean/max)=207.278/284.313  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.79s  t_bwd(train)=23.77s  *best
+  checkpoint saved (epoch 3, val_fsurr=2561.6382) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch  4  val_fsurr=2561.6882  val_pinball=42.8701  val_combined=83.1728  skipped=0  grad_norm(mean/max)=86.908/162.398  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.61s/0.61s  t_bwd(train)=27.75s  (patience 1/10)
+[1stage single-price] epoch  5  val_fsurr=2561.3088  val_pinball=42.3516  val_combined=82.1171  skipped=0  grad_norm(mean/max)=87.411/132.705  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.61s  t_bwd(train)=23.52s  *best
+  checkpoint saved (epoch 5, val_fsurr=2561.3088) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch  6  val_fsurr=2561.9898  val_pinball=43.6012  val_combined=84.4641  skipped=0  grad_norm(mean/max)=227.575/348.248  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.61s  t_bwd(train)=24.88s  (patience 1/10)
+[1stage single-price] epoch  7  val_fsurr=2562.3435  val_pinball=44.6916  val_combined=86.5336  skipped=0  grad_norm(mean/max)=205.603/357.563  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.53s/0.89s  t_bwd(train)=24.16s  (patience 2/10)
+[1stage single-price] epoch  8  val_fsurr=2561.4197  val_pinball=42.7837  val_combined=82.8772  skipped=0  grad_norm(mean/max)=289.075/377.388  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.69s  t_bwd(train)=24.69s  (patience 3/10)
+[1stage single-price] epoch  9  val_fsurr=2562.5102  val_pinball=42.3573  val_combined=82.2077  skipped=0  grad_norm(mean/max)=151.096/281.739  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.61s  t_bwd(train)=24.88s  (patience 4/10)
+[1stage single-price] epoch 10  val_fsurr=2561.9250  val_pinball=43.4820  val_combined=84.2087  skipped=0  grad_norm(mean/max)=224.532/309.291  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.53s  t_bwd(train)=22.83s  (patience 5/10)
+[1stage single-price] epoch 11  val_fsurr=2562.2865  val_pinball=44.9107  val_combined=86.9032  skipped=0  grad_norm(mean/max)=193.068/342.135  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.48s/0.63s  t_bwd(train)=22.54s  (patience 6/10)
+[1stage single-price] epoch 12  val_fsurr=2560.7365  val_pinball=42.1854  val_combined=81.8324  skipped=0  grad_norm(mean/max)=320.815/611.069  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.50s/0.59s  t_bwd(train)=23.19s  *best
+  checkpoint saved (epoch 12, val_fsurr=2560.7365) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch 13  val_fsurr=2561.7910  val_pinball=42.8111  val_combined=82.9679  skipped=0  grad_norm(mean/max)=174.327/277.078  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.53s/0.61s  t_bwd(train)=25.45s  (patience 1/10)
+[1stage single-price] epoch 14  val_fsurr=2561.2555  val_pinball=43.3403  val_combined=83.9493  skipped=0  grad_norm(mean/max)=132.016/195.678  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.50s/0.76s  t_bwd(train)=23.40s  (patience 2/10)
+[1stage single-price] epoch 15  val_fsurr=2559.9918  val_pinball=42.2159  val_combined=81.8499  skipped=0  grad_norm(mean/max)=179.353/319.865  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.56s/0.64s  t_bwd(train)=27.41s  *best
+  checkpoint saved (epoch 15, val_fsurr=2559.9918) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch 16  val_fsurr=2560.8859  val_pinball=42.8013  val_combined=83.0226  skipped=0  grad_norm(mean/max)=236.672/340.297  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.59s  t_bwd(train)=24.65s  (patience 1/10)
+[1stage single-price] epoch 17  val_fsurr=2562.6140  val_pinball=46.8736  val_combined=90.4712  skipped=0  grad_norm(mean/max)=260.934/408.315  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.60s/0.63s  t_bwd(train)=28.47s  (patience 2/10)
+[1stage single-price] epoch 18  val_fsurr=2560.9316  val_pinball=43.4927  val_combined=84.2218  skipped=0  grad_norm(mean/max)=237.562/320.020  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.54s/0.62s  t_bwd(train)=24.55s  (patience 3/10)
+[1stage single-price] epoch 19  val_fsurr=2561.4340  val_pinball=42.8352  val_combined=83.0616  skipped=0  grad_norm(mean/max)=247.675/375.098  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.62s  t_bwd(train)=23.35s  (patience 4/10)
+[1stage single-price] epoch 20  val_fsurr=2561.4504  val_pinball=44.7373  val_combined=86.4333  skipped=0  grad_norm(mean/max)=154.083/280.312  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.50s/0.60s  t_bwd(train)=23.34s  (patience 5/10)
+[1stage single-price] epoch 21  val_fsurr=2562.0006  val_pinball=45.6695  val_combined=88.3831  skipped=0  grad_norm(mean/max)=155.992/292.779  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.60s  t_bwd(train)=23.32s  (patience 6/10)
+[1stage single-price] epoch 22  val_fsurr=2561.6031  val_pinball=43.2982  val_combined=83.9079  skipped=0  grad_norm(mean/max)=311.759/458.618  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.70s  t_bwd(train)=23.43s  (patience 7/10)
+[1stage single-price] epoch 23  val_fsurr=2560.3618  val_pinball=42.5032  val_combined=82.3638  skipped=0  grad_norm(mean/max)=188.093/348.795  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.56s/0.60s  t_bwd(train)=23.52s  (patience 8/10)
+[1stage single-price] epoch 24  val_fsurr=2560.7687  val_pinball=42.5848  val_combined=82.6038  skipped=0  grad_norm(mean/max)=226.631/403.413  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.61s  t_bwd(train)=23.46s  (patience 9/10)
+[1stage single-price] epoch 25  val_fsurr=2559.9645  val_pinball=41.9808  val_combined=81.4439  skipped=0  grad_norm(mean/max)=144.839/215.799  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.70s/0.61s  t_bwd(train)=24.33s  *best
+  checkpoint saved (epoch 25, val_fsurr=2559.9645) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+[1stage single-price] epoch 26  val_fsurr=2561.2341  val_pinball=42.5892  val_combined=82.5548  skipped=0  grad_norm(mean/max)=170.962/417.411  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.63s/0.58s  t_bwd(train)=28.31s  (patience 1/10)
+[1stage single-price] epoch 27  val_fsurr=2561.5955  val_pinball=42.6849  val_combined=82.7162  skipped=0  grad_norm(mean/max)=131.038/183.343  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.57s/0.59s  t_bwd(train)=24.85s  (patience 2/10)
+[1stage single-price] epoch 28  val_fsurr=2561.4479  val_pinball=43.4331  val_combined=84.1831  skipped=0  grad_norm(mean/max)=203.949/288.482  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.55s/0.62s  t_bwd(train)=24.58s  (patience 3/10)
+[1stage single-price] epoch 29  val_fsurr=2561.0999  val_pinball=43.7345  val_combined=84.5748  skipped=0  grad_norm(mean/max)=132.338/284.612  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.49s/0.59s  t_bwd(train)=23.42s  (patience 4/10)
+[1stage single-price] epoch 30  val_fsurr=2561.2526  val_pinball=44.0443  val_combined=85.3289  skipped=0  grad_norm(mean/max)=100.058/135.223  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.49s/0.60s  t_bwd(train)=23.37s  (patience 5/10)
+[1stage single-price] epoch 31  val_fsurr=2561.1819  val_pinball=43.6979  val_combined=84.4816  skipped=0  grad_norm(mean/max)=137.258/275.665  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.49s/0.61s  t_bwd(train)=23.70s  (patience 6/10)
+[1stage single-price] epoch 32  val_fsurr=2561.5993  val_pinball=45.2337  val_combined=87.5185  skipped=0  grad_norm(mean/max)=217.154/325.891  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.49s/0.59s  t_bwd(train)=23.09s  (patience 7/10)
+[1stage single-price] epoch 33  val_fsurr=2561.1556  val_pinball=42.8248  val_combined=82.9556  skipped=0  grad_norm(mean/max)=279.589/527.837  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.60s  t_bwd(train)=23.98s  (patience 8/10)
+[1stage single-price] epoch 34  val_fsurr=2561.4511  val_pinball=43.3191  val_combined=83.9129  skipped=0  grad_norm(mean/max)=148.322/283.428  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.59s  t_bwd(train)=22.82s  (patience 9/10)
+[1stage single-price] epoch 35  val_fsurr=2560.3410  val_pinball=42.3775  val_combined=82.1865  skipped=0  grad_norm(mean/max)=113.154/200.378  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.56s/0.61s  t_bwd(train)=23.80s  (patience 10/10)
+  early stop at epoch 35 (best val_fsurr=2559.9645)
+
+CORNER_DONE archetype=balanced mode=single-price best_val_fsurr=2559.9645 epochs_run=36 elapsed_s=1333 t_fwd_train_s=19.4 (avg 0.54/epoch)  t_bwd_train_s=878.6 (avg 24.41/epoch)  t_fwd_val_s=22.6 (avg 0.63/epoch)
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_1stage_single-price_seed20240805.pt
+
+CORNER_START architecture=1stage mode=dual-price archetype=balanced C_ch=2.0 C_dis=2.0 B_max=4.0
+batch_size=64
+[1stage dual-price] epoch  0  val_fsurr=2606.1164  val_pinball=44.5246  val_combined=86.3022  skipped=0  grad_norm(mean/max)=517.030/976.932  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.65s  t_bwd(train)=22.36s  *best
+  checkpoint saved (epoch 0, val_fsurr=2606.1164) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+[1stage dual-price] epoch  1  val_fsurr=2604.7504  val_pinball=43.9444  val_combined=85.3765  skipped=0  grad_norm(mean/max)=175.425/309.738  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.53s/0.61s  t_bwd(train)=25.88s  *best
+  checkpoint saved (epoch 1, val_fsurr=2604.7504) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+[1stage dual-price] epoch  2  val_fsurr=2605.5063  val_pinball=44.5380  val_combined=86.3270  skipped=0  grad_norm(mean/max)=175.257/327.778  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.50s/0.62s  t_bwd(train)=23.47s  (patience 1/10)
+[1stage dual-price] epoch  3  val_fsurr=2603.5441  val_pinball=43.1881  val_combined=83.8739  skipped=0  grad_norm(mean/max)=214.549/303.000  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.62s/0.66s  t_bwd(train)=28.05s  *best
+  checkpoint saved (epoch 3, val_fsurr=2603.5441) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+[1stage dual-price] epoch  4  val_fsurr=2603.1025  val_pinball=42.4718  val_combined=82.5680  skipped=0  grad_norm(mean/max)=143.514/262.523  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.60s/0.64s  t_bwd(train)=25.84s  *best
+  checkpoint saved (epoch 4, val_fsurr=2603.1025) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+[1stage dual-price] epoch  5  val_fsurr=2603.0356  val_pinball=42.3206  val_combined=82.2457  skipped=0  grad_norm(mean/max)=120.247/219.105  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.53s/0.81s  t_bwd(train)=26.53s  *best
+  checkpoint saved (epoch 5, val_fsurr=2603.0356) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+[1stage dual-price] epoch  6  val_fsurr=2604.1355  val_pinball=42.9681  val_combined=83.4157  skipped=0  grad_norm(mean/max)=264.025/356.002  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.64s  t_bwd(train)=24.26s  (patience 1/10)
+[1stage dual-price] epoch  7  val_fsurr=2605.9413  val_pinball=45.0014  val_combined=87.2766  skipped=0  grad_norm(mean/max)=190.230/341.944  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.66s  t_bwd(train)=24.38s  (patience 2/10)
+[1stage dual-price] epoch  8  val_fsurr=2604.1474  val_pinball=42.7557  val_combined=83.0750  skipped=0  grad_norm(mean/max)=376.933/568.641  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.62s/0.79s  t_bwd(train)=27.34s  (patience 3/10)
+[1stage dual-price] epoch  9  val_fsurr=2603.5335  val_pinball=42.8919  val_combined=83.3589  skipped=0  grad_norm(mean/max)=281.706/457.508  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.56s/0.69s  t_bwd(train)=26.03s  (patience 4/10)
+[1stage dual-price] epoch 10  val_fsurr=2606.4919  val_pinball=45.3094  val_combined=87.7834  skipped=0  grad_norm(mean/max)=335.062/431.714  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.54s/0.64s  t_bwd(train)=23.60s  (patience 5/10)
+[1stage dual-price] epoch 11  val_fsurr=2604.9916  val_pinball=44.1001  val_combined=85.5713  skipped=0  grad_norm(mean/max)=252.021/415.230  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.60s/0.62s  t_bwd(train)=27.20s  (patience 6/10)
+[1stage dual-price] epoch 12  val_fsurr=2604.1381  val_pinball=43.1546  val_combined=83.8011  skipped=0  grad_norm(mean/max)=226.424/517.189  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.56s/0.69s  t_bwd(train)=28.65s  (patience 7/10)
+[1stage dual-price] epoch 13  val_fsurr=2603.4298  val_pinball=43.0860  val_combined=83.7033  skipped=0  grad_norm(mean/max)=135.566/280.309  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.61s/0.61s  t_bwd(train)=27.00s  (patience 8/10)
+[1stage dual-price] epoch 14  val_fsurr=2602.9206  val_pinball=42.2556  val_combined=82.1287  skipped=0  grad_norm(mean/max)=176.487/361.517  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.57s/0.60s  t_bwd(train)=25.85s  *best
+  checkpoint saved (epoch 14, val_fsurr=2602.9206) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+[1stage dual-price] epoch 15  val_fsurr=2602.8674  val_pinball=42.1294  val_combined=81.9167  skipped=0  grad_norm(mean/max)=152.578/278.604  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.60s  t_bwd(train)=25.54s  *best
+  checkpoint saved (epoch 15, val_fsurr=2602.8674) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+[1stage dual-price] epoch 16  val_fsurr=2603.6594  val_pinball=42.8535  val_combined=83.2033  skipped=0  grad_norm(mean/max)=262.399/395.407  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.55s/0.59s  t_bwd(train)=23.55s  (patience 1/10)
+[1stage dual-price] epoch 17  val_fsurr=2606.0145  val_pinball=45.3664  val_combined=88.0247  skipped=0  grad_norm(mean/max)=323.908/551.720  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.50s/0.63s  t_bwd(train)=23.20s  (patience 2/10)
+[1stage dual-price] epoch 18  val_fsurr=2604.5029  val_pinball=43.6592  val_combined=84.6893  skipped=0  grad_norm(mean/max)=178.780/300.054  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.52s/0.60s  t_bwd(train)=23.30s  (patience 3/10)
+[1stage dual-price] epoch 19  val_fsurr=2603.4237  val_pinball=42.6949  val_combined=82.9974  skipped=0  grad_norm(mean/max)=215.111/367.498  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.60s  t_bwd(train)=23.48s  (patience 4/10)
+[1stage dual-price] epoch 20  val_fsurr=2604.3850  val_pinball=43.6782  val_combined=84.7082  skipped=0  grad_norm(mean/max)=150.013/263.107  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.55s/0.60s  t_bwd(train)=24.07s  (patience 5/10)
+[1stage dual-price] epoch 21  val_fsurr=2604.2519  val_pinball=43.4520  val_combined=84.3934  skipped=0  grad_norm(mean/max)=107.098/243.735  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.50s/0.62s  t_bwd(train)=23.37s  (patience 6/10)
+[1stage dual-price] epoch 22  val_fsurr=2606.2394  val_pinball=45.6519  val_combined=88.4263  skipped=0  grad_norm(mean/max)=118.096/235.039  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.53s/0.72s  t_bwd(train)=25.36s  (patience 7/10)
+[1stage dual-price] epoch 23  val_fsurr=2603.8167  val_pinball=43.5003  val_combined=84.4931  skipped=0  grad_norm(mean/max)=180.979/321.807  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.56s/0.69s  t_bwd(train)=25.46s  (patience 8/10)
+[1stage dual-price] epoch 24  val_fsurr=2603.1121  val_pinball=42.8974  val_combined=83.2901  skipped=0  grad_norm(mean/max)=302.055/487.374  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.51s/0.61s  t_bwd(train)=24.34s  (patience 9/10)
+[1stage dual-price] epoch 25  val_fsurr=2603.8758  val_pinball=43.0053  val_combined=83.4903  skipped=0  grad_norm(mean/max)=234.523/357.806  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=0.62s/0.61s  t_bwd(train)=26.29s  (patience 10/10)
+  early stop at epoch 25 (best val_fsurr=2602.8674)
+
+CORNER_DONE archetype=balanced mode=dual-price best_val_fsurr=2602.8674 epochs_run=26 elapsed_s=989 t_fwd_train_s=14.2 (avg 0.55/epoch)  t_bwd_train_s=654.4 (avg 25.17/epoch)  t_fwd_val_s=16.8 (avg 0.65/epoch)
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price_seed20240805.pt
+
+======================================================================
+PIPELINE_SUMMARY
+  balanced       single-price     OK                                 1333s
+  balanced       dual-price       OK                                  989s

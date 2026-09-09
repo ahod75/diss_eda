@@ -1,0 +1,31 @@
+/home/fleet75/diss_bess/7_model_training/train_crps_only.py:78: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  total += float(day_loss)
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+epoch  0  train_pinball=40.6958  val_pinball=42.6436  (34.9s)  *best
+epoch  1  train_pinball=38.8324  val_pinball=43.9103  (32.5s)  (patience 1/10)
+epoch  2  train_pinball=37.5710  val_pinball=47.6998  (29.8s)  (patience 2/10)
+epoch  3  train_pinball=37.7225  val_pinball=41.9323  (30.6s)  *best
+epoch  4  train_pinball=37.3531  val_pinball=44.3517  (31.1s)  (patience 1/10)
+epoch  5  train_pinball=36.8529  val_pinball=43.2475  (26.8s)  (patience 2/10)
+epoch  6  train_pinball=36.7707  val_pinball=43.2209  (31.8s)  (patience 3/10)
+epoch  7  train_pinball=36.6373  val_pinball=43.4982  (32.4s)  (patience 4/10)
+epoch  8  train_pinball=36.6705  val_pinball=42.9300  (27.7s)  (patience 5/10)
+epoch  9  train_pinball=36.4404  val_pinball=43.1774  (27.5s)  (patience 6/10)
+epoch 10  train_pinball=36.4052  val_pinball=44.8702  (40.7s)  (patience 7/10)
+epoch 11  train_pinball=36.9620  val_pinball=41.7304  (30.0s)  *best
+epoch 12  train_pinball=37.2948  val_pinball=44.7974  (29.5s)  (patience 1/10)
+epoch 13  train_pinball=36.7779  val_pinball=44.0426  (27.2s)  (patience 2/10)
+epoch 14  train_pinball=36.6237  val_pinball=42.8725  (26.3s)  (patience 3/10)
+epoch 15  train_pinball=36.7163  val_pinball=43.5277  (25.9s)  (patience 4/10)
+epoch 16  train_pinball=36.6989  val_pinball=43.6457  (27.7s)  (patience 5/10)
+epoch 17  train_pinball=36.7237  val_pinball=44.2050  (25.8s)  (patience 6/10)
+epoch 18  train_pinball=36.2081  val_pinball=44.0589  (26.1s)  (patience 7/10)
+epoch 19  train_pinball=36.4819  val_pinball=42.7666  (25.8s)  (patience 8/10)
+epoch 20  train_pinball=36.3520  val_pinball=42.9353  (25.9s)  (patience 9/10)
+epoch 21  train_pinball=36.3262  val_pinball=43.4975  (26.0s)  (patience 10/10)
+early stop at epoch 21 (best val_pinball=41.7304)
+saved -> /home/fleet75/diss_bess/7_model_training/crps_only_retrained_seed20240804.pt

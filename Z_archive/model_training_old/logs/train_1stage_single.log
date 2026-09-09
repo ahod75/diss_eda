@@ -1,0 +1,29 @@
+CORNER_START price_model=single (1-stage, no k)
+/home/fleet75/diss_bess/6_models/dispatch_layer.py:432: UserWarning: You are solving a parameterized problem that is not DPP. Because the problem is not DPP, subsequent solves will not be faster than the first one. For more information, see the documentation on Disciplined Parametrized Programming, at https://www.cvxpy.org/tutorial/dpp/index.html
+  bundle.problem.solve(solver=solver, **solver_kwargs)
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+precomputing oracle costs (train)...
+Set parameter WLSAccessID
+Set parameter WLSSecret
+Set parameter LicenseID to value 2828580
+Academic license 2828580 - for non-commercial use only - registered to al___@ucl.ac.uk
+/home/fleet75/diss_bess/7_model_training/train_corner_1stage.py:204: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  float(L_base.sum()), float(f_dfl.sum()), (B if inaccurate else 0))
+precomputing oracle costs (val)...
+[single 1stage] epoch  0  val_fsurr=50.8126  val_pinball=49.6529  val_combined=31.5357  skipped=0  grad_norm(mean/max)=317.972/652.943  inaccurate(train/val)=0/0  *best
+[single 1stage] epoch  1  val_fsurr=44.6016  val_pinball=48.7897  val_combined=29.4100  skipped=0  grad_norm(mean/max)=278.804/592.965  inaccurate(train/val)=0/0  *best
+[single 1stage] epoch  2  val_fsurr=48.7122  val_pinball=53.4017  val_combined=31.7780  skipped=0  grad_norm(mean/max)=337.612/756.062  inaccurate(train/val)=0/0  (patience 1/5)
+[single 1stage] epoch  3  val_fsurr=44.4508  val_pinball=47.7325  val_combined=28.8255  skipped=0  grad_norm(mean/max)=276.638/511.138  inaccurate(train/val)=0/0  *best
+[single 1stage] epoch  4  val_fsurr=47.4495  val_pinball=46.5065  val_combined=28.8966  skipped=0  grad_norm(mean/max)=313.138/727.582  inaccurate(train/val)=0/0  (patience 1/5)
+[single 1stage] epoch  5  val_fsurr=48.1685  val_pinball=50.7346  val_combined=30.3385  skipped=0  grad_norm(mean/max)=275.691/673.526  inaccurate(train/val)=0/0  (patience 2/5)
+[single 1stage] epoch  6  val_fsurr=45.1414  val_pinball=47.6013  val_combined=28.6065  skipped=0  grad_norm(mean/max)=259.357/516.722  inaccurate(train/val)=0/0  (patience 3/5)
+[single 1stage] epoch  7  val_fsurr=48.2087  val_pinball=49.7806  val_combined=30.5812  skipped=0  grad_norm(mean/max)=302.194/1141.715  inaccurate(train/val)=0/0  (patience 4/5)
+[single 1stage] epoch  8  val_fsurr=45.1431  val_pinball=48.5091  val_combined=29.0078  skipped=0  grad_norm(mean/max)=266.717/718.023  inaccurate(train/val)=0/0  (patience 5/5)
+  early stop at epoch 8 (best val_fsurr=44.4508)
+
+CORNER_DONE price_model=single best_val_fsurr=44.4508 epochs_run=9 elapsed_s=365
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_1stage_single.pt

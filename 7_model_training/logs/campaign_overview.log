@@ -1,0 +1,28 @@
+CAMPAIGN_START 2026-08-24T11:36:15Z
+
+=== SEED 20240801: crps_only_retrained (2026-08-24T11:36:15Z) ===
+  OK
+=== SEED 20240801: dfl_forecasts (single+dual-price) (2026-08-24T11:42:51Z) ===
+  OK
+
+=== SEED 20240802: crps_only_retrained (2026-08-24T12:02:11Z) ===
+  OK
+=== SEED 20240802: dfl_forecasts (single+dual-price) (2026-08-24T12:07:32Z) ===
+  OK
+
+=== SEED 20240803: crps_only_retrained (2026-08-24T12:27:05Z) ===
+  OK
+=== SEED 20240803: dfl_forecasts (single+dual-price) (2026-08-24T12:33:04Z) ===
+  OK
+
+=== SEED 20240804: crps_only_retrained (2026-08-24T12:47:19Z) ===
+  OK
+=== SEED 20240804: dfl_forecasts (single+dual-price) (2026-08-24T12:58:11Z) ===
+  OK
+
+=== SEED 20240805: crps_only_retrained (2026-08-24T13:16:42Z) ===
+  OK
+=== SEED 20240805: dfl_forecasts (single+dual-price) (2026-08-24T13:23:11Z) ===
+  OK
+
+CAMPAIGN_DONE 2026-08-24T14:02:03Z

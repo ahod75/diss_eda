@@ -1,0 +1,20 @@
+CORNER_START price_model=single k=1.0
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+[single k=1] epoch  0  val_fsurr=14.0363  val_pinball=56.5011  val_combined=21.7221  skipped=0  *best
+[single k=1] epoch  1  val_fsurr=12.7615  val_pinball=54.5679  val_combined=20.0498  skipped=0  *best
+[single k=1] epoch  2  val_fsurr=14.0017  val_pinball=61.3048  val_combined=22.0652  skipped=0  (patience 1/10)
+[single k=1] epoch  3  val_fsurr=13.1437  val_pinball=53.9573  val_combined=20.4758  skipped=0  (patience 2/10)
+[single k=1] epoch  4  val_fsurr=13.4324  val_pinball=56.9360  val_combined=20.8971  skipped=0  (patience 3/10)
+[single k=1] epoch  5  val_fsurr=13.3705  val_pinball=54.5995  val_combined=20.8127  skipped=0  (patience 4/10)
+[single k=1] epoch  6  val_fsurr=14.6131  val_pinball=56.7131  val_combined=22.3976  skipped=0  (patience 5/10)
+[single k=1] epoch  7  val_fsurr=13.1853  val_pinball=54.6990  val_combined=20.5064  skipped=0  (patience 6/10)
+[single k=1] epoch  8  val_fsurr=17.5501  val_pinball=60.9237  val_combined=26.2133  skipped=0  (patience 7/10)
+[single k=1] epoch  9  val_fsurr=13.8144  val_pinball=54.7157  val_combined=21.2914  skipped=0  (patience 8/10)
+[single k=1] epoch 10  val_fsurr=12.9791  val_pinball=54.9751  val_combined=20.2045  skipped=0  (patience 9/10)
+[single k=1] epoch 11  val_fsurr=14.3829  val_pinball=55.8918  val_combined=22.0855  skipped=0  (patience 10/10)
+  early stop at epoch 11 (best val_fsurr=12.7615)
+CORNER_DONE price_model=single k=1.0 best_val_fsurr=12.7615 epochs_run=12 elapsed_s=8079
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_single_k1.pt

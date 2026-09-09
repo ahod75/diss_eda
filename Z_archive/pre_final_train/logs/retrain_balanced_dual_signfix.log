@@ -1,0 +1,26 @@
+device=cpu  archetype=balanced  mode=dual-price
+loading training data...
+[impute] 66 missing values across ['prosumption', 'solar_irrad', 'panel_temp', 'ambient_temp'] after reindex
+[impute]   prosumption: 20 missing, longest run 11h   <-- LONG GAP (review)
+[impute]   panel_temp: 46 missing, longest run 19h   <-- LONG GAP (review)
+n_train=365  n_val=181
+
+CORNER_START architecture=1stage mode=dual-price archetype=balanced C_ch=2.0 C_dis=2.0 B_max=4.0
+batch_size=8
+backed up existing checkpoint -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price.pt.pre_signfix_bak
+/home/fleet75/diss_bess/7_model_training/dfl_train_utils.py:237: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  float(L_base.sum()), float(f_dfl.sum()), (B if inaccurate else 0), t_forward)
+[1stage dual-price] epoch  0  val_fsurr=2603.1058  val_pinball=42.6003  val_combined=82.8888  skipped=0  grad_norm(mean/max)=414.562/1274.009  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=8/0  t_fwd(train/val)=12.38s/5.09s  t_bwd(train)=95.62s  *best
+  checkpoint saved (epoch 0, val_fsurr=2603.1058) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price.pt
+[1stage dual-price] epoch  1  val_fsurr=2602.6574  val_pinball=42.3572  val_combined=82.4195  skipped=0  grad_norm(mean/max)=355.071/740.061  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=10.39s/4.33s  t_bwd(train)=74.85s  *best
+  checkpoint saved (epoch 1, val_fsurr=2602.6574) -> /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price.pt
+[1stage dual-price] epoch  2  val_fsurr=2608.2021  val_pinball=46.1682  val_combined=89.2981  skipped=0  grad_norm(mean/max)=278.548/667.160  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=9.90s/3.94s  t_bwd(train)=72.08s  (patience 1/5)
+[1stage dual-price] epoch  3  val_fsurr=2603.6000  val_pinball=42.4322  val_combined=82.5530  skipped=0  grad_norm(mean/max)=421.947/899.621  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=8/1  t_fwd(train/val)=10.96s/4.88s  t_bwd(train)=82.73s  (patience 2/5)
+[1stage dual-price] epoch  4  val_fsurr=2606.9131  val_pinball=45.2262  val_combined=87.6619  skipped=0  grad_norm(mean/max)=273.045/667.657  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=11.41s/8.09s  t_bwd(train)=84.61s  (patience 3/5)
+[1stage dual-price] epoch  5  val_fsurr=2605.9017  val_pinball=44.5305  val_combined=86.4197  skipped=0  grad_norm(mean/max)=268.230/553.076  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=10.96s/5.79s  t_bwd(train)=82.08s  (patience 4/5)
+[1stage dual-price] epoch  6  val_fsurr=2607.8737  val_pinball=46.5744  val_combined=90.1294  skipped=0  grad_norm(mean/max)=279.937/680.489  sat_frac(train/val)=0.000/0.000  inaccurate(train/val)=0/0  t_fwd(train/val)=11.48s/4.38s  t_bwd(train)=84.94s  (patience 5/5)
+  early stop at epoch 6 (best val_fsurr=2602.6574)
+
+CORNER_DONE archetype=balanced mode=dual-price best_val_fsurr=2602.6574 epochs_run=7 elapsed_s=770
+CORNER_SAVED /home/fleet75/diss_bess/7_model_training/dfl_1stage_dual-price.pt
